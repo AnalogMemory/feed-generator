@@ -1,5 +1,7 @@
 # ATProto Feed Generator
 
+*This is a test fork for a custom feed of "cats"*
+
 🚧 Work in Progress 🚧 
 
 We are actively developing Feed Generator integration into the Bluesky Personal Data Server (PDS). Though we are reasonably confident about the general shape and interfaces laid out here, these interfaces and implementation details _are_ subject to change. 
@@ -38,9 +40,7 @@ Next, you will need to do two things:
 
 2. Implement feed generation logic in `src/algos`
 
-   For inspiration, we've provided a very simple feed algorithm (`whats-alf`) that returns all posts related to the titular character of the TV show ALF. 
-
-   You can either edit it or add another algorithm alongside it. The types are in place, and you will just need to return something that satisfies the `SkeletonFeedPost[]` type.
+   The types are in place, and you will just need to return something that satisfies the `SkeletonFeedPost[]` type.
 
 We've taken care of setting this server up with a did:web. However, you're free to switch this out for did:plc if you like - you may want to if you expect this Feed Generator to be long-standing and possibly migrating domains.
 
@@ -54,7 +54,7 @@ After successfully running the script, you should be able to see your feed from 
 
 ## Running the Server
 
-Install dependencies with `yarn` and then run the server with `yarn start`. This will start the server on port 3000, or what's defined in `.env`. You can then watch the firehose output in the console and access the output of the default custom ALF feed at [http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/whats-alf](http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/whats-alf).
+Install dependencies with `yarn` and then run the server with `yarn start`. This will start the server on port 3000, or what's defined in `.env`. You can then watch the firehose output in the console and access the output of the just-cats feed at [http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/just-cats](http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/just-cats).
 
 ## Some Details
 

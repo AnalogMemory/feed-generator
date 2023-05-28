@@ -2,30 +2,23 @@ import dotenv from 'dotenv'
 import { AtpAgent, BlobRef } from '@atproto/api'
 import fs from 'fs/promises'
 import { ids } from '../src/lexicon/lexicons'
+import { maybeStr } from '../src/util/validateType';
 
 const run = async () => {
   dotenv.config()
 
-  // YOUR bluesky handle
-  // Ex: user.bsky.social
-  const handle = ''
+  const handle = maybeStr(process.env.BLUESKY_HANDLE) ?? "";
+  const password = maybeStr(process.env.APP_PASSWORD) ?? "";
 
-  // YOUR bluesky password, or preferably an App Password (found in your client settings)
-  // Ex: abcd-1234-efgh-5678
-  const password = ''
-
-  // A short name for the record that will show in urls
-  // Lowercase with no spaces.
-  // Ex: whats-hot
-  const recordName = ''
+  const recordName = 'test-just-cats'
 
   // A display name for your feed
   // Ex: What's Hot
-  const displayName = ''
+  const displayName = 'Test Feed: Just Cats'
 
   // (Optional) A description of your feed
   // Ex: Top trending content from the whole network
-  const description = ''
+  const description = 'Not recommended for consumption'
 
   // (Optional) The path to an image to be used as your feed's avatar
   // Ex: ~/path/to/avatar.jpeg

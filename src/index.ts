@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import FeedGenerator from './server'
+import { maybeInt, maybeStr } from './util/validateType'
 
 const run = async () => {
   dotenv.config()
@@ -20,18 +21,6 @@ const run = async () => {
   console.log(
     `🤖 running feed generator at http://${server.cfg.listenhost}:${server.cfg.port}`,
   )
-}
-
-const maybeStr = (val?: string) => {
-  if (!val) return undefined
-  return val
-}
-
-const maybeInt = (val?: string) => {
-  if (!val) return undefined
-  const int = parseInt(val, 10)
-  if (isNaN(int)) return undefined
-  return int
 }
 
 run()

@@ -58,6 +58,10 @@ export class FeedGenerator {
     app.use(server.xrpc.router)
     app.use(wellKnown(ctx))
 
+    app.get('/', (req, res) => {
+      res.send('A Bluesky 😺 feed generator')
+    })
+
     return new FeedGenerator(app, db, firehose, cfg)
   }
 
